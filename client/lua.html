@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Moon</title>
+  </head>
+
+  <body>
+
+   <header class="top-bar">
+    <!-- BOTÃO HAMBURGER -->
+    <div class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="index.html" class="logo-title">Now Space</a>
+    </header>
+
+    <!-- MENU LATERAL -->
+    <nav class="side-menu" id="sideMenu">
+      
+      
+        <ul>
+            <li>Mercury</li><br>
+            <li>Venus</li><br>
+            <li><a href="terra.html">Earth</a></li><br>
+            <li><a href="lua.html">Moon</a></li><br>
+            <li><a href="marte.html">Mars</a></li><br>
+            <li>Jupiter</li><br>
+            <li>Saturn</li><br>
+            <li>Uranus</li><br>
+            <li>Neptune</li><br>
+        </ul>
+    </nav>
+
+    <!-- SEÇÕES DA PÁGINA -->
+    <section class="section-black">
+      <h1 class="page-title"><img src="./img/moon.gif" alt="Moon rotating" class="planet-icon">Moon</h1>
+    </section>
+
+    <section class="section-image-lua">
+    </section>
+
+    <section class="section-white">
+      <p></p>
+    </section>
+
+    <!-- ROOT DO REACT (mantém no final) -->
+    <div id="root"></div>
+
+  
+  <script src="./menu.js"></script>
+  <script type="module" src="/src/main.jsx"></script>
+
+
+    <!-- VITE / REACT -->
+    <script type="module" src="/src/main.jsx"></script>
+
+  </body>
+</html>
