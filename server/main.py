@@ -28,5 +28,35 @@ def get_apod():
   response = requests.get(url)
   return jsonify(response.json())
 
+
+@app.route("/api/mars")
+def mars():
+    insight_key = "umSMWOH941QEqsGesL8dzJyeX0MYJp3ZyfHye4BB"
+    url = f"https://api.nasa.gov/insight_weather/?api_key={insight_key}&feedtype=json&ver=1.0"
+
+    data = requests.get(url).json()
+    sol = data["sol_keys"][-1]
+    day = data[sol]
+
+    return jsonify({
+        "sol": sol,
+        "estacao":day.get("Season"),
+        "temperatura": {
+            "media": day.get("AT", {}).get("av"),
+            "max": day.get("AT", {}).get("mx"),
+            "min": day.get("AT", {}).get("mn")
+        },
+        "pressao": {
+            "media": day.get("PRE", {}).get("av"),
+            "max": day.get("PRE", {}).get("mx"),
+            "min": day.get("PRE", {}).get("mn")
+        },
+        "vento": {
+            "media": day.get("HWS", {}).get("av"),
+            "max": day.get("HWS", {}).get("mx"),
+            "min": day.get("HWS", {}).get("mn")
+        }
+    })
+
 if __name__ == '__main__':
   app.run(debug=True, port=8080)
